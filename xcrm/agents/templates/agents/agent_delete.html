@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h4 class="mt-3 mb-3">&nbsp;</h4>
+    <a href="{% url 'agents:agent-list' %}">Назад</a>
+    <h1>Уверены? Удалить агента?</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="flex ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded">Удалить</button>
+    </form>
+{% endblock content %}
